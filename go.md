@@ -1,17 +1,17 @@
 ---
-title: Go
+Название: Go
 layout: 2017/sheet
 prism_languages: [go, bash]
 weight: -3
 tags: [Featured]
 category: C-like
-updated: 2020-06-21
+обновлено: 2020-06-21
 ---
 
-## Getting started
+## Начало
 {: .-three-column}
 
-### Introduction
+### Введение
 {: .-intro}
 
 - [A tour of Go](https://tour.golang.org/welcome/1) _(tour.golang.org)_
@@ -43,11 +43,11 @@ func greetMe(name string) string {
 $ go build
 ```
 
-Or try it out in the [Go repl](https://repl.it/languages/go), or [A Tour of Go](https://tour.golang.org/welcome/1).
+Или попробуйте [Go repl](https://repl.it/languages/go), или [A Tour of Go](https://tour.golang.org/welcome/1).
 
-### Variables
+### Переменные
 
-#### Variable declaration
+#### Объявление переменных
 
 ```go
 var msg string
@@ -59,7 +59,7 @@ var x, msg = 1, "Hello, world!"
 msg = "Hello"
 ```
 
-#### Declaration list
+#### Спимок объявлений
 
 ``` go
 var (
@@ -71,14 +71,14 @@ var (
 )
 ```
 
-#### Shortcut of above (Infers type)
+#### Сокращённый вариант (Вывод типа)
 
 ```go
 msg := "Hello"
 x, msg := 1, "Hello"
 ```
 
-### Constants
+### Константы
 
 ```go
 const Phi = 1.618
@@ -99,14 +99,14 @@ const (
 )
 ```
 
-Constants can be character, string, boolean, or numeric values.
+Константа может быть символом, строкой, логическим или числовым значением.
 
-See: [Constants](https://tour.golang.org/basics/15)
+Смотри: [Constants](https://tour.golang.org/basics/15)
 
-## Basic types
+## Основные типы
 {: .-three-column}
 
-### Strings
+### Строки
 
 ```go
 str := "Hello"
@@ -117,11 +117,11 @@ str := `Multiline
 string`
 ```
 
-Strings are of type `string`.
+Строка имеет тип `string`.
 
-### Numbers
+### Числа
 
-#### Typical types
+#### Распространённые типы
 
 ```go
 num := 3          // int
@@ -130,23 +130,23 @@ num := 3 + 4i     // complex128
 num := byte('a')  // byte (alias for uint8)
 ```
 
-#### Other types
+#### Другие типы
 
 ```go
 var u uint = 7        // uint (unsigned)
 var p float32 = 22.7  // 32-bit float
 ```
 
-### Arrays
+### Массивы
 
 ```go
 // var numbers [5]int
 numbers := [...]int{0, 0, 0, 0, 0}
 ```
 
-Arrays have a fixed size.
+Массивы имеют фиксированный размер.
 
-### Slices
+### Срезы
 
 ```go
 slice := []int{2, 3, 4}
@@ -156,9 +156,9 @@ slice := []int{2, 3, 4}
 slice := []byte("Hello")
 ```
 
-Slices have a dynamic size, unlike arrays.
+Срезы имеют динамический размер, в отличии от массивов.
 
-### Pointers
+### Указатели
 
 ```go
 func main () {
@@ -182,11 +182,11 @@ a := new(int)
 ```
 {: data-line="2"}
 
-Pointers point to a memory location of a variable. Go is fully garbage-collected.
+Указатель обозначает место размещения переменной в памяти. Память в Go управляется сборщиком мусора.
 
-See: [Pointers](https://tour.golang.org/moretypes/1)
+Смотри: [Pointers](https://tour.golang.org/moretypes/1)
 
-### Type conversions
+### Преобразования типа
 
 ```go
 i := 2
@@ -194,12 +194,12 @@ f := float64(i)
 u := uint(i)
 ```
 
-See: [Type conversions](https://tour.golang.org/basics/13)
+Смотри: [Type conversions](https://tour.golang.org/basics/13)
 
-## Flow control
+## Управление ходом вычислений
 {: .-three-column}
 
-### Conditional
+### Условия
 
 ```go
 if day == "sunday" || day == "saturday" {
@@ -212,9 +212,9 @@ if day == "sunday" || day == "saturday" {
 ```
 {: data-line="1,3,5"}
 
-See: [If](https://tour.golang.org/flowcontrol/5)
+Смотри: [If](https://tour.golang.org/flowcontrol/5)
 
-### Statements in if
+### Выражения в if
 
 ```go
 if _, err := doThing(); err != nil {
@@ -223,11 +223,11 @@ if _, err := doThing(); err != nil {
 ```
 {: data-line="1"}
 
-A condition in an `if` statement can be preceded with a statement before a `;`. Variables declared by the statement are only in scope until the end of the `if`.
+Условия в выражениях `if` могут предварятся блоком перед `;`. Переменные объявленные в блоке действуют до конца `if`.
 
-See: [If with a short statement](https://tour.golang.org/flowcontrol/6)
+Смотри: [If with a short statement](https://tour.golang.org/flowcontrol/6)
 
-### Switch
+### Выбор
 
 ```go
 switch day {
@@ -243,9 +243,9 @@ switch day {
 }
 ```
 
-See: [Switch](https://github.com/golang/go/wiki/Switch)
+Смотри: [Switch](https://github.com/golang/go/wiki/Switch)
 
-### For loop
+### Цикл For
 
 ```go
 for count := 0; count <= 10; count++ {
@@ -253,9 +253,9 @@ for count := 0; count <= 10; count++ {
 }
 ```
 
-See: [For loops](https://tour.golang.org/flowcontrol/1)
+Смотри: [For loops](https://tour.golang.org/flowcontrol/1)
 
-### For-Range loop
+### Цикл по диапазону
 
 ```go
 entry := []string{"Jack","John","Jones"}
@@ -264,9 +264,9 @@ for i, val := range entry {
 }
 ```
 
-See: [For-Range loops](https://gobyexample.com/range)
+Смотри: [For-Range loops](https://gobyexample.com/range)
 
-### While loop
+### Цикл While
 
 ```go
 n := 0
@@ -276,12 +276,12 @@ for n != x {
 }
 ```
 
-See: [Go's "while"](https://tour.golang.org/flowcontrol/3)
+Смотри: [Go's "while"](https://tour.golang.org/flowcontrol/3)
 
-## Functions
+## Функции
 {: .-three-column}
 
-### Lambdas
+### Лямбды
 
 ```go
 myfunc := func() bool {
@@ -290,9 +290,9 @@ myfunc := func() bool {
 ```
 {: data-line="1"}
 
-Functions are first class objects.
+Функции являются объектами первого класса.
 
-### Multiple return types
+### Возврат нескольких значений
 
 ```go
 a, b := getMessage()
@@ -306,7 +306,7 @@ func getMessage() (a string, b string) {
 {: data-line="2"}
 
 
-### Named return values
+### Именование возвращаемых значений
 
 ```go
 func split(sum int) (x, y int) {
@@ -317,14 +317,14 @@ func split(sum int) (x, y int) {
 ```
 {: data-line="4"}
 
-By defining the return value names in the signature, a `return` (no args) will return variables with those names.
+Определив имена возвращаемых значений в сигнатуре функции, `return` (без аргументов) вернёт переменные с этими именами.
 
-See: [Named return values](https://tour.golang.org/basics/7)
+Смотри: [Named return values](https://tour.golang.org/basics/7)
 
-## Packages
+## Пакеты
 {: .-three-column}
 
-### Importing
+### Импорт
 
 ```go
 import "fmt"
@@ -338,11 +338,11 @@ import (
 )
 ```
 
-Both are the same.
+Это эквивалентные варианты.
 
-See: [Importing](https://tour.golang.org/basics/1)
+Смотри: [Importing](https://tour.golang.org/basics/1)
 
-### Aliases
+### Псевдонимы
 
 ```go
 import r "math/rand"
@@ -353,7 +353,7 @@ import r "math/rand"
 r.Intn()
 ```
 
-### Exporting names
+### Экспотритуемые имена
 
 ```go
 func Hello () {
@@ -361,36 +361,36 @@ func Hello () {
 }
 ```
 
-Exported names begin with capital letters.
+Экспортируемое имя начинается с заглавной буквы.
 
-See: [Exported names](https://tour.golang.org/basics/3)
+Смотри: [Exported names](https://tour.golang.org/basics/3)
 
-### Packages
+### Пакеты
 
 ```go
 package hello
 ```
 
-Every package file has to start with `package`.
+Каждый файл в пакете начинается с `package`.
 
-## Concurrency
+## Конкурентность
 {: .-three-column}
 
-### Goroutines
+### Go-рутины
 
 ```go
 func main() {
   // A "channel"
   ch := make(chan string)
 
-  // Start concurrent routines
+  // Начало конкуретного выполнения
   go push("Moe", ch)
   go push("Larry", ch)
   go push("Curly", ch)
 
-  // Read 3 results
-  // (Since our goroutines are concurrent,
-  // the order isn't guaranteed!)
+  // Чтение 3 результатов
+  // (Поскольку выполнение конкурентное,
+  // порядок не гарантирован!)
   fmt.Println(<-ch, <-ch, <-ch)
 }
 ```
@@ -404,29 +404,29 @@ func push(name string, ch chan string) {
 ```
 {: data-line="3"}
 
-Channels are concurrency-safe communication objects, used in goroutines.
+Каналы - конкурентно-безопасное взаимодействие объектов, используются в go-рутинах.
 
-See: [Goroutines](https://tour.golang.org/concurrency/1), [Channels](https://tour.golang.org/concurrency/2)
+Смотри: [Goroutines](https://tour.golang.org/concurrency/1), [Channels](https://tour.golang.org/concurrency/2)
 
-### Buffered channels
+### Буферризация каналов
 
 ```go
 ch := make(chan int, 2)
 ch <- 1
 ch <- 2
 ch <- 3
-// fatal error:
-// all goroutines are asleep - deadlock!
+// Фатальная ошибка:
+// все go-рутины заснули are asleep - блокировка!
 ```
 {: data-line="1"}
 
-Buffered channels limit the amount of messages it can keep.
+Буферизированные каналы ограничивают количество сообщений которые они могут сохранить.
 
-See: [Buffered channels](https://tour.golang.org/concurrency/3)
+Смотри: [Buffered channels](https://tour.golang.org/concurrency/3)
 
-### Closing channels
+### Закрытие каналов
 
-#### Closes a channel
+#### Закрытие канала
 
 ```go
 ch <- 1
@@ -436,7 +436,7 @@ close(ch)
 ```
 {: data-line="4"}
 
-#### Iterates across a channel until its closed
+#### Итерация пока канал закрыт
 
 ```go
 for i := range ch {
@@ -445,13 +445,13 @@ for i := range ch {
 ```
 {: data-line="1"}
 
-#### Closed if `ok == false`
+#### Закрытие если `ok == false`
 
 ```go
 v, ok := <- ch
 ```
 
-See: [Range and close](https://tour.golang.org/concurrency/4)
+Смотри: [Range and close](https://tour.golang.org/concurrency/4)
 
 ### WaitGroup
 
@@ -462,11 +462,11 @@ func main() {
   var wg sync.WaitGroup
   
   for _, item := range itemList {
-    // Increment WaitGroup Counter
+    // Увеличение счётчика WaitGroup
     wg.Add(1)
     go doOperation(&wg, item)
   }
-  // Wait for goroutines to finish
+  // Ожидание завершения go-рутины
   wg.Wait()
   
 }
@@ -482,13 +482,13 @@ func doOperation(wg *sync.WaitGroup, item string) {
 ```
 {: data-line="2"}
 
-A WaitGroup waits for a collection of goroutines to finish. The main goroutine calls Add to set the number of goroutines to wait for. The goroutine calls `wg.Done()` when it finishes.
-See: [WaitGroup](https://golang.org/pkg/sync/#WaitGroup)
+WaitGroup ожидают завершения коллекции go-рутин. Основная go-рутина вызывает Add для установки номера go-рутине для ожиданя. G0-рутина вызывает `wg.Done()` при завершении.
+Смотри: [WaitGroup](https://golang.org/pkg/sync/#WaitGroup)
 
 
-## Error control
+## Управление ошибками
 
-### Defer
+### Откладывание (Defer)
 
 ```go
 func main() {
@@ -498,12 +498,12 @@ func main() {
 ```
 {: data-line="2"}
 
-Defers running a function until the surrounding function returns.
-The arguments are evaluated immediately, but the function call is not ran until later.
+Откладывает выполнение функции до тех пор, пока окружающая функция не возвращается.
+Аргументы вычисляются немедлено, но вызов функции откладывается.
 
-See: [Defer, panic and recover](https://blog.golang.org/defer-panic-and-recover)
+Смотри: [Defer, panic and recover](https://blog.golang.org/defer-panic-and-recover)
 
-### Deferring functions
+### Отложенные функции
 
 ```go
 func main() {
@@ -515,7 +515,7 @@ func main() {
 ```
 {: data-line="2,3,4"}
 
-Lambdas are better suited for defer blocks.
+Лямда прекрасно подходит для отложеных блоков.
 
 ```go
 func main() {
@@ -528,12 +528,13 @@ func main() {
 }
 ```
 {: data-line="3,4,5"}
-The defer func uses current value of d, unless we use a pointer to get final value at end of main.
+Отложеные функции используют текущее значение d, 
+The defer func uses current value of d, если мы не используем указатель для получения конечного значения в конце main.
 
-## Structs
+## Структуры
 {: .-three-column}
 
-### Defining
+### Определение
 
 ```go
 type Vertex struct {
@@ -551,38 +552,38 @@ func main() {
 }
 ```
 
-See: [Structs](https://tour.golang.org/moretypes/2)
+Смотри: [Structs](https://tour.golang.org/moretypes/2)
 
-### Literals
+### Литералы
 
 ```go
 v := Vertex{X: 1, Y: 2}
 ```
 
 ```go
-// Field names can be omitted
+// Имя поля можно опустить
 v := Vertex{1, 2}
 ```
 
 ```go
-// Y is implicit
+// Y неявное
 v := Vertex{X: 1}
 ```
 
-You can also put field names.
+Вы также можете указать имена полей.
 
-### Pointers to structs
+### Указатели на структуры
 
 ```go
 v := &Vertex{1, 2}
 v.X = 2
 ```
 
-Doing `v.X` is the same as doing `(*v).X`, when `v` is a pointer.
+Эффект от `v.X` такой же как у `(*v).X`, когда `v` указатель.
 
-## Methods
+## Методы
 
-### Receivers
+### Приемники
 
 ```go
 type Vertex struct {
@@ -602,11 +603,11 @@ v := Vertex{1, 2}
 v.Abs()
 ```
 
-There are no classes, but you can define functions with _receivers_.
+Это не классы, но вы можете определить функцию с _приёмником_.
 
-See: [Methods](https://tour.golang.org/methods/1)
+Смотри: [Methods](https://tour.golang.org/methods/1)
 
-### Mutation
+### Изменения
 
 ```go
 func (v *Vertex) Scale(f float64) {
@@ -622,13 +623,13 @@ v.Scale(0.5)
 // `v` is updated
 ```
 
-By defining your receiver as a pointer (`*Vertex`), you can do mutations.
+Определив ваш приёмник как указатель (`*Vertex`), вы можете возвращать изменённый объект.
 
-See: [Pointer receivers](https://tour.golang.org/methods/4)
+Смотри: [Pointer receivers](https://tour.golang.org/methods/4)
 
-## Interfaces
+## Интерфейсы
 
-### A basic interface
+### Основы интерфейсов
 
 ```go
 type Shape interface {
@@ -637,7 +638,7 @@ type Shape interface {
 }
 ```
 
-### Struct
+### Структура
 
 ```go
 type Rectangle struct {
@@ -645,9 +646,9 @@ type Rectangle struct {
 }
 ```
 
-Struct `Rectangle` implicitly implements interface `Shape` by implementing all of its methods.
+Структура `Rectangle` неявно реализует интерфейс `Shape` рализуя все его методы.
 
-### Methods
+### Методы
 
 ```go
 func (r Rectangle) Area() float64 {
@@ -659,9 +660,9 @@ func (r Rectangle) Perimeter() float64 {
 }
 ```
 
-The methods defined in `Shape` are implemented in `Rectangle`.
+Методы объявленные в `Shape` реализуются в `Rectangle`.
 
-### Interface example
+### Пример интерфейса
 
 ```go
 func main() {
@@ -670,16 +671,16 @@ func main() {
 }
 ```
 
-## References
+## Ссылки
 
-### Official resources
+### Официальные ресурсы
 {: .-intro}
 
 - [A tour of Go](https://tour.golang.org/welcome/1) _(tour.golang.org)_
 - [Golang wiki](https://github.com/golang/go/wiki/) _(github.com)_
 - [Effective Go](https://golang.org/doc/effective_go.html) _(golang.org)_
 
-### Other links
+### Доугие ссылки
 {: .-intro}
 
 - [Go by Example](https://gobyexample.com/) _(gobyexample.com)_
