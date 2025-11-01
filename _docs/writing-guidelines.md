@@ -43,21 +43,52 @@ H3 content length:
 4. **Quick reference**: Dense information for experienced developers
 5. **Learning path**: Logical progression for newcomers
 
-## Examples
+## H3 writing guidelines
 
-- Place documentation links in the end.
-- Prefer to write explanations *after* a pre/table.
+- Place documentation links in the end. (see next for example)
+- Prefer to write explanations *after* a pre/table. Example:
 
-````markdonw
-### Setting default props
+  ````markdown
+  ### Setting default props
+  
+  ```jsx
+  Hello.defaultProps = {
+    color: 'blue'
+  }
+  ```
+  
+  Default properties are used if no properties are given.
+  
+  See: [defaultProps](https://reactjs.org/docs/react-component.html#defaultprops)
+  ````
 
-```jsx
-Hello.defaultProps = {
-  color: 'blue'
-}
-```
+- When an example has multiple files, use H4 as filename markers. Example:
 
-Default properties are used if no properties are given.
-
-See: [defaultProps](https://reactjs.org/docs/react-component.html#defaultprops)
-````
+  ````markdown
+  ### via Data Attributes
+  
+  #### index.html.erb
+  
+  ```html
+  <a
+    href="#"
+    data-reflex="click->CounterReflex#increment"
+    data-step="1"
+    data-count="<%= @count.to_i %>"
+    >Increment <%= @count.to_i %></a
+  >
+  ```
+  
+  #### counter_reflex.rb
+  
+  ```ruby
+  class CounterReflex < StimulusReflex::Reflex
+    def increment
+      @count = element.dataset[:count].to_i + element.dataset[:step].to_i
+    end
+  end
+  ```
+  
+  Trigger reflexes without writing any javascript with the `data-reflex` attribute.
+  
+  ````
