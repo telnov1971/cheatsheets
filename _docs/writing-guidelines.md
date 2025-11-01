@@ -92,3 +92,55 @@ H3 content length:
   Trigger reflexes without writing any javascript with the `data-reflex` attribute.
   
   ````
+
+- When showing reference information, use tables for quick scanning. Example:
+
+  ````markdown
+  ### Primitives
+
+  | Sample                  | Type            |
+  | ---                     | ---             |
+  | `nil`                   | Nil/null        |
+  | `true` _/_ `false`      | Boolean         |
+  | ---                     | ---             |
+  | `23`                    | Integer         |
+  | `3.14`                  | Float           |
+  | ---                     | ---             |
+  | `"hello"`               | Binary string   |
+  | `:hello`                | Atom            |
+
+  These are the basic data types in Elixir.
+  ````
+
+- Use inline comments to explain results, equivalents, or provide context. Example:
+
+  ````markdown
+  ### Pattern matching
+
+  ```elixir
+  user = %{name: "Tom", age: 23}
+  %{name: username} = user  # → username = "Tom"
+  ```
+
+  ### Piping
+
+  ```elixir
+  source
+  |> transform(:hello)     # Step 1: transform the data
+  |> print()               # Step 2: output the result
+  ```
+
+  ```elixir
+  # Same as:
+  print(transform(source, :hello))
+  ```
+
+  ### Type conversions
+
+  ```elixir
+  Integer.parse("34")      # → {34, ""}
+  Float.parse("34.1")      # → {34.1, ""}
+  ```
+  ````
+
+```
